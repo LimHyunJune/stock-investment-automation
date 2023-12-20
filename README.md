@@ -33,19 +33,16 @@ To do: Add 2.0v selling service after testing the services targeted for purchase
 
 # Architecture
 
-- Apply MSA to ensure stability  
-<img src="https://github.com/LimHyunJune/stock-investment-automation/assets/48524793/9435fe5c-db8d-4a13-86c6-d2919d00f340" width="50%" height="50%"/>
-
-
-- Abstracting for fluid application of different methods of data collection  
-  
-<img src="https://github.com/LimHyunJune/stock-investment-automation/assets/48524793/f36eacfe-ee5f-48c5-bfe2-fd7c215823a2" width="50%" height="50%"/>
-
-  
-
+- Apply MSA to ensure stability    
+  + <img src="https://github.com/LimHyunJune/stock-investment-automation/assets/48524793/9435fe5c-db8d-4a13-86c6-d2919d00f340" width="50%" height="50%"/>
 - Plug-in Engine Structure for Applying Multiple Buy Checklists
 
-  <img src="https://github.com/LimHyunJune/stock-investment-automation/assets/48524793/944fbb58-6ee2-4bb4-9590-4e7854df5571" width="60%" height="50%"/>
+  + <img src="https://github.com/LimHyunJune/stock-investment-automation/assets/48524793/944fbb58-6ee2-4bb4-9590-4e7854df5571" width="60%" height="50%"/>
+
+- Abstracting for fluid application of different methods of data collection   
+  + <img src="https://github.com/LimHyunJune/stock-investment-automation/assets/48524793/f36eacfe-ee5f-48c5-bfe2-fd7c215823a2" width="50%" height="50%"/>
+ 
+
 
 
 
