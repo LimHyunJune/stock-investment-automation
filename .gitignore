@@ -1,0 +1,6 @@
+
+buy/src/main/resources/application.properties
+gateway/src/main/resources/application.properties
+front/src/main/resources/application.properties
+discovery/src/main/resources/application.properties
+datafetcher/src/main/resources/application.properties
