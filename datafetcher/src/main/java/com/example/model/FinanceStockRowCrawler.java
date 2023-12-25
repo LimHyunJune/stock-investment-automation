@@ -45,46 +45,46 @@ public class FinanceStockRowCrawler implements FinanceDataFetcher{
 
     @Override
     public List<Double> getGrossProfit(String company) {
-        return null;
+        return excelParser.getStockRowData(getIncomeUrl(company),4);
     }
 
     @Override
     public List<Double> getPER(String company) {
-        return null;
+        return excelParser.getStockRowData(getMetricsUrl(company),1);
     }
 
     @Override
     public List<Double> getTotalCurrentAsset(String company) {
-        return null;
+        return excelParser.getStockRowData(getBalanceUrl(company),5);
     }
 
     @Override
     public List<Double> getDebtGrowth(String company) {
-        return null;
+        return excelParser.getStockRowData(getGrowthUrl(company),14);
     }
 
     @Override
     public List<Double> getDPE(String company) {
-        return null;
+        return excelParser.getStockRowData(getMetricsUrl(company),15);
     }
 
     @Override
     public List<Double> getCashflowPerShare(String company) {
-        return null;
+        return excelParser.getStockRowData(getGrowthUrl(company),8);
     }
 
     @Override
     public List<Double> getOperatingCashFlow(String company) {
-        return null;
+        return excelParser.getStockRowData(getCashFlowUrl(company),9);
     }
 
     @Override
     public List<Double> getRnDExpensesGrowth(String company) {
-        return null;
+        return excelParser.getStockRowData(getGrowthUrl(company),16);
     }
 
     @Override
     public List<Double> getInventoryGrowth(String company) {
-        return null;
+        return excelParser.getStockRowData(getGrowthUrl(company),14);
     }
 }
