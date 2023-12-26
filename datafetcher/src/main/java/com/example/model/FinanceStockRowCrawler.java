@@ -1,9 +1,11 @@
 package com.example.model;
 import com.example.util.ExcelParser;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
+@Slf4j
 public class FinanceStockRowCrawler implements FinanceDataFetcher{
 
     private final ExcelParser excelParser;
@@ -40,51 +42,61 @@ public class FinanceStockRowCrawler implements FinanceDataFetcher{
 
     @Override
     public List<Double> getRevenueGrowth(String company) {
-        return excelParser.getStockRowData(getIncomeUrl(company),2);
+        log.info("getRevenueGrowth : Company[{}]", company);
+        return excelParser.getStockRowData(getIncomeUrl(company),"Revenue Growth");
     }
 
     @Override
-    public List<Double> getGrossProfit(String company) {
-        return excelParser.getStockRowData(getIncomeUrl(company),4);
+    public List<Double> getGrossProfitGrowth(String company) {
+        log.info("getGrossProfit : Company[{}]", company);
+        return excelParser.getStockRowData(getIncomeUrl(company),"Gross Profit Growth");
     }
 
     @Override
     public List<Double> getPER(String company) {
-        return excelParser.getStockRowData(getMetricsUrl(company),1);
+        log.info("getPER : Company[{}]", company);
+        return excelParser.getStockRowData(getMetricsUrl(company),"P/E ratio");
     }
 
     @Override
     public List<Double> getTotalCurrentAsset(String company) {
-        return excelParser.getStockRowData(getBalanceUrl(company),5);
+        log.info("getTotalCurrentAsset : Company[{}]", company);
+        return excelParser.getStockRowData(getBalanceUrl(company),"Total current assets");
     }
 
     @Override
     public List<Double> getDebtGrowth(String company) {
-        return excelParser.getStockRowData(getGrowthUrl(company),14);
+        log.info("getDebtGrowth : Company[{}]", company);
+        return excelParser.getStockRowData(getGrowthUrl(company),"Debt Growth");
     }
 
     @Override
     public List<Double> getDPE(String company) {
-        return excelParser.getStockRowData(getMetricsUrl(company),15);
+        log.info("getDPE : Company[{}]", company);
+        return excelParser.getStockRowData(getMetricsUrl(company),"Debt/Equity");
     }
 
     @Override
     public List<Double> getCashflowPerShare(String company) {
-        return excelParser.getStockRowData(getGrowthUrl(company),8);
+        log.info("getCashflowPerShare : Company[{}]", company);
+        return excelParser.getStockRowData(getGrowthUrl(company),"Free Cash Flow per Share");
     }
 
     @Override
     public List<Double> getOperatingCashFlow(String company) {
-        return excelParser.getStockRowData(getCashFlowUrl(company),9);
+        log.info("getOperatingCashFlow : Company[{}]", company);
+        return excelParser.getStockRowData(getCashFlowUrl(company),"Operating Cash Flow");
     }
 
     @Override
     public List<Double> getRnDExpensesGrowth(String company) {
-        return excelParser.getStockRowData(getGrowthUrl(company),16);
+        log.info("getRnDExpensesGrowth : Company[{}]", company);
+        return excelParser.getStockRowData(getGrowthUrl(company),"Research and Development (R&D) Expenses Growth");
     }
 
     @Override
     public List<Double> getInventoryGrowth(String company) {
-        return excelParser.getStockRowData(getGrowthUrl(company),14);
+        log.info("getInventoryGrowth : Company[{}]", company);
+        return excelParser.getStockRowData(getGrowthUrl(company),"Inventory Growth");
     }
 }
