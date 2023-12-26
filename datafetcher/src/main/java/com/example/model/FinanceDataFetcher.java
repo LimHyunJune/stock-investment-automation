@@ -5,7 +5,7 @@ import java.util.List;
 public interface FinanceDataFetcher {
 
     List<Double> getRevenueGrowth(String company); //매출 성장률
-    List<Double> getGrossProfit(String company); // 이익 성장률
+    List<Double> getGrossProfitGrowth(String company); // 이익 성장률
     List<Double> getPER(String company); // PER
     List<Double> getTotalCurrentAsset(String company); // 현금성 자산
     List<Double> getDebtGrowth(String company); // 부채 상승율
