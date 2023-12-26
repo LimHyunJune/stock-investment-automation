@@ -3,6 +3,8 @@ package com.example.controller;
 import com.example.dto.StockData;
 import com.example.kafka.KafkaProducer;
 import com.example.model.*;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,8 +38,7 @@ public class DataFetcherController {
     }
 
     @GetMapping("run")
-    public List<StockData> run() throws InterruptedException
-    {
+    public List<StockData> run() throws InterruptedException, JsonProcessingException {
         String sector = sectorDataFetcher.getSector();
         List<String> candidates = candidateDataFetcher.getCandidates(sector);
         List<StockData> stockDataResult = new ArrayList<>();
@@ -56,7 +57,8 @@ public class DataFetcherController {
                     .inventoryGrowth(financeDataFetcher.getInventoryGrowth(candidate)).build();
             stockDataResult.add(stockData);
         }
-        String result = stockDataResult.toString();
+        ObjectMapper mapper = new ObjectMapper();
+        String result = mapper.writeValueAsString(stockDataResult);
         log.info("Result : {}", result);
         kafkaProducer.send("data", result);
         return stockDataResult;
