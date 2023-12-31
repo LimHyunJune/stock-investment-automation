@@ -30,6 +30,9 @@ Automation service production considered
 4. Third-order filtering of the remaining companies will be applied by the user himself/herself to the checklist
 
 To do: Add 2.0v selling service after testing the services targeted for purchase
+  
+Stockrow stopped supporting data provision API 😢   
+(Stop work until a new API is discovered)
 
 # Architecture
 
